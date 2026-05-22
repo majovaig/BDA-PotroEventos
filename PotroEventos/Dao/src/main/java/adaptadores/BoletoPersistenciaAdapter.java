@@ -1,6 +1,5 @@
 package adaptadores;
 
-import Entitys.Asiento;
 import Entitys.AsientoEvento;
 import Entitys.Boleto;
 import Entitys.ENUMS.EstadoBoleto;
@@ -49,11 +48,9 @@ public class BoletoPersistenciaAdapter {
         if (dominio.getAsiento() != null && dominio.getAsiento().getIdAsientoEvento() != null) {
             AsientoEventoResumenMongo aer = new AsientoEventoResumenMongo();
             aer.setIdAsientoEvento(convertirStringAObjectId(dominio.getAsiento().getIdAsientoEvento()));
+
             if (dominio.getAsiento().getAsiento() != null && dominio.getAsiento().getAsiento().getIdAsiento() != null) {
                 aer.setAsiento(convertirStringAObjectId(dominio.getAsiento().getAsiento().getIdAsiento()));
-                aer.setFila(dominio.getAsiento().getAsiento().getFila());
-                aer.setNumero(dominio.getAsiento().getAsiento().getNumero());
-                aer.setNombreSeccion(dominio.getAsiento().getAsiento().getSeccion().getNombre());
             }
 
             if (dominio.getEvento() != null && dominio.getEvento().getIdEvento() != null) {
@@ -94,28 +91,15 @@ public class BoletoPersistenciaAdapter {
             dominio.setEstadoBoleto(EstadoBoleto.valueOf(estado));
         }
 
-//        // Mapeo de Asiento Resumen
-//        Document asientoResumenDoc = (Document) mongo.get("asiento");
-//        if (asientoResumenDoc != null) {
-//            ObjectId idAsientoEvento = asientoResumenDoc.getObjectId("idAsientoEvento");
-//            if (idAsientoEvento != null) {
-//                AsientoEvento ae = new AsientoEvento();
-//                ae.setIdAsientoEvento(idAsientoEvento.toHexString());
-//                dominio.setAsiento(ae);
-//            }
-//        }
-        
-        Document asiento = (Document) mongo.get("asiento");
-        if (asiento != null) {
-            Asiento a = new Asiento();
-            a.setFila(asiento.getString("fila"));
-            a.setNumero(asiento.getInteger("numero"));
-
-            AsientoEvento ae = new AsientoEvento();
-            ae.setIdAsientoEvento(asiento.getObjectId("idAsientoEvento").toHexString());
-            ae.setAsiento(a);
-
-            dominio.setAsiento(ae);
+        // Mapeo de Asiento Resumen
+        Document asientoResumenDoc = (Document) mongo.get("asiento");
+        if (asientoResumenDoc != null) {
+            ObjectId idAsientoEvento = asientoResumenDoc.getObjectId("idAsientoEvento");
+            if (idAsientoEvento != null) {
+                AsientoEvento ae = new AsientoEvento();
+                ae.setIdAsientoEvento(idAsientoEvento.toHexString());
+                dominio.setAsiento(ae);
+            }
         }
 
         // Mapeo de Evento

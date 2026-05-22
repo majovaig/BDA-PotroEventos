@@ -15,20 +15,14 @@ public class AsientoEventoResumenMongo {
     private ObjectId idAsientoEvento;
     private ObjectId asiento;
     private ObjectId evento;
-    private String fila;
-    private int numero;
-    private String nombreSeccion;
 
     public AsientoEventoResumenMongo() {
     }
 
-    public AsientoEventoResumenMongo(ObjectId idAsientoEvento, ObjectId asiento, ObjectId evento, String fila, int numero, String nombreSeccion) {
+    public AsientoEventoResumenMongo(ObjectId idAsientoEvento, ObjectId asiento, ObjectId evento) {
         this.idAsientoEvento = idAsientoEvento;
         this.asiento = asiento;
         this.evento = evento;
-        this.fila = fila;
-        this.numero = numero;
-        this.nombreSeccion = nombreSeccion;
     }
 
     public ObjectId getIdAsientoEvento() {
@@ -37,6 +31,13 @@ public class AsientoEventoResumenMongo {
 
     public void setIdAsientoEvento(ObjectId idAsientoEvento) {
         this.idAsientoEvento = idAsientoEvento;
+    }
+
+    public String getIdComoTexto() {
+        if (idAsientoEvento == null) {
+            return null;
+        }
+        return idAsientoEvento.toHexString();
     }
 
     public ObjectId getAsiento() {
@@ -53,30 +54,6 @@ public class AsientoEventoResumenMongo {
 
     public void setEvento(ObjectId evento) {
         this.evento = evento;
-    }
-
-    public String getFila() {
-        return fila;
-    }
-
-    public void setFila(String fila) {
-        this.fila = fila;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public String getNombreSeccion() {
-        return nombreSeccion;
-    }
-
-    public void setNombreSeccion(String nombreSeccion) {
-        this.nombreSeccion = nombreSeccion;
     }
 
 }

@@ -340,7 +340,6 @@ public class FrmPago extends javax.swing.JFrame {
             reservacion.setPago(pago);
             try {
                 coordinador.agregarReservacion(reservacion);
-                coordinador.reducirCapacidad(reservacion.getBoleto().getEvento().getIdEvento());
             } catch (CoordinadorException ex) {
                 mostrarMensaje(ex.getMessage());
             }

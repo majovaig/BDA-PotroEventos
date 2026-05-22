@@ -394,6 +394,11 @@ public class PantallaDevolucion extends javax.swing.JFrame {
             coordinadorDevolucion.abrirConsultar("Cancelados");
             limpiar();
         } else {
+            /*
+            esta condición cambiará ya que en el programa en su última versión
+            sí existe el dto pago y será más fácil detectar si una reservación fue
+            pagada con créditos de la app, ahorita mismo no funciona mucho como tal
+            */
             if(reservacion.getPago().getMetodoPago().equals("Créditos")){
                 int opcion = JOptionPane.showConfirmDialog(this, "La reservación fue pagada con créditos de la aplicación, por lo que solo se le pueden reembolsar con créditos de la aplicación");
                 if(opcion == JOptionPane.CANCEL_OPTION || opcion == JOptionPane.NO_OPTION){

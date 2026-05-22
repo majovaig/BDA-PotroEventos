@@ -83,7 +83,5 @@ public interface IReservacionBO {
     List<AsientoEventoDTO> obtenerAsientosConAsistencia(String idEvento) throws NegocioException;
 
     boolean obtenerReservacion(String idReservacion) throws NegocioException;
-    
-    BoletoDTO obtenerBoleto(String idReservacion) throws NegocioException;
 }
 

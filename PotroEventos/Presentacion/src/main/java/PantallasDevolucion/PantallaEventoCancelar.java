@@ -37,7 +37,7 @@ public class PantallaEventoCancelar extends javax.swing.JFrame {
     private void validarTiempo(){
         if(coordinadorDev.validarTiempo(reservacion.getBoleto().getEvento())){
             JOptionPane.showMessageDialog(this, "El evento está a menos de 48 horas de ocurrir, por lo que no puede ser cancelado.");
-            coordinadorDev.abrirConsultar("Proximos");
+            coordinadorDev.abrirConsultar("Próximos");
             dispose();
         }
     }

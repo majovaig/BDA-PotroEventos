@@ -23,6 +23,9 @@
         <module>SubsistemaIpWebcam</module>
         <module>SubsistemaInicioSesionEmpleado</module>
         <module>SubsistemaCambioAsiento</module>
+        <module>SubsistemaZeroBounce</module>
+        <module>SubsistemaSAT</module>
+        <module>SubsistemaFactura</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

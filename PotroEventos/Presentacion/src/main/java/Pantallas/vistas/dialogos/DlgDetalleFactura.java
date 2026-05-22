@@ -411,19 +411,19 @@ public class DlgDetalleFactura extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-//        coordinador.mostrarDatosFactura(factura);
+        coordinador.mostrarDatosFactura(factura);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-//        try {
-//            if(coordinador.timbrarFactura(factura)){
-//                JOptionPane.showMessageDialog(this, "Su factura ha sido enviada a : " + factura.getPerfil().getCorreo());
-//                this.dispose();
-//            }
-//        } catch (CoordinadorException ex) {
-//            JOptionPane.showMessageDialog(this, ex.getMessage());
-//            this.dispose();
-//        }
+        try {
+            if(coordinador.timbrarFactura(factura)){
+                JOptionPane.showMessageDialog(this, "Su factura ha sido enviada a : " + factura.getPerfil().getCorreo());
+                this.dispose();
+            }
+        } catch (CoordinadorException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            this.dispose();
+        }
         
     }//GEN-LAST:event_btnAceptarActionPerformed
 

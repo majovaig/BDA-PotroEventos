@@ -162,18 +162,15 @@ public class FrmCamara extends javax.swing.JFrame {
 
                                             } else {
                                                 dialogo.mostrarError("ACCESO DENEGADO", ex.getMessage());
-                                                logger.warning("falle en la primera excepcion");
                                             }
                                         } catch (Exception e) {
                                             // Si falla la consulta al coordinador, mostramos el error original
                                             dialogo.mostrarError("ACCESO DENEGADO", ex.getMessage());
-                                            logger.warning("falle en la penultima excepcion");
                                         }
 
                                     } else {
                                         // Para cualquier otro error (no existe, expirado, null pointers del servidor, etc.)
                                         dialogo.mostrarError("ACCESO DENEGADO", ex.getMessage());
-                                        logger.warning("falle en la ultima excepcion");
                                     }
 
                                     dialogo.setLocationRelativeTo(this);

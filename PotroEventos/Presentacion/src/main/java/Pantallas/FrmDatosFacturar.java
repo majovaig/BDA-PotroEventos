@@ -503,7 +503,7 @@ public class FrmDatosFacturar extends javax.swing.JFrame {
 
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
         if(recogerDatos()){
-            //this.coordinador.mostrarResumenDatosFactura(this.factura);
+            this.coordinador.mostrarResumenDatosFactura(this.factura);
         }
     }//GEN-LAST:event_btnGenerarActionPerformed
     private void campoMetodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoMetodoActionPerformed

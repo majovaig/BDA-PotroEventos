@@ -90,6 +90,9 @@ public class CoordinadorDevolucion implements ICoordinadorDevolucion {
         coordinadorApp.mostrarConsultar(tipoEvento);
     }
 
+    /*
+    sabes k we yo creo q esto lo puede hacer el subsistema as well
+     */
     @Override
     public boolean validarTiempo(EventoDTO evento) {
         return controlDevolucion.validarTiempoDevolucion(evento.getFechaHora());

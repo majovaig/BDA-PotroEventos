@@ -4,14 +4,14 @@
  */
 package CambioAsiento;
 
-import Exception.CambioAsientoException;
-import dtos.BoletoDTO;
-
-/**
- *
- * @author Dayanara Peralta G
- */
-public interface ICambioAsiento {
-    BoletoDTO obtenerBoleto(String idReservacion) throws CambioAsientoException;
-    boolean cambiarAsiento(String idReservacion, String idAsientoNuevo) throws CambioAsientoException;
-}
+//import Exception.CambioAsientoException;
+//import dtos.BoletoDTO;
+//
+///**
+// *
+// * @author Dayanara Peralta G
+// */
+//public interface ICambioAsiento {
+//    BoletoDTO obtenerBoleto(String idReservacion) throws CambioAsientoException;
+//    boolean cambiarAsiento(String idReservacion, String idAsientoNuevo) throws CambioAsientoException;
+//}

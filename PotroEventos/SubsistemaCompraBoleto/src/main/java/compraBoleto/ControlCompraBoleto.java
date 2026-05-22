@@ -262,7 +262,8 @@ public class ControlCompraBoleto{
             }
             
             if (reservacion.getPago() != null) {
-                if (usuarioBO.restarCreditos(totalCompra.intValue(), reservacion.getUsuario().getIdUsuario())) {
+                System.out.println((int) (totalCompra / 100.0 * 2));
+                if (usuarioBO.restarCreditos((int) (totalCompra / 100.0 * 2), reservacion.getUsuario().getIdUsuario())) {
                     asientoEventoBO.venderAsiento(reservacion.getBoleto().getAsiento().getIdAsientoEvento());
                     reservacionBO.agregarReservacion(reservacion);
                     return true;

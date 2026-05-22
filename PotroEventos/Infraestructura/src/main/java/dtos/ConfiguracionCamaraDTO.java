@@ -10,7 +10,7 @@ package dtos;
  */
 public class ConfiguracionCamaraDTO {
 
-    private String URLCAMARA = "http://10.91.128.87:8080/shot.jpg?t=";
+    private String URLCAMARA = "http://192.168.1.13:8080/shot.jpg?t=";
 
     public ConfiguracionCamaraDTO() {
     }

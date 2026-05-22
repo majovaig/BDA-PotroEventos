@@ -114,7 +114,6 @@ public class ReservacionDAO implements IReservacionDAO {
 
             LOG.info("Consulta éxitosa. Reservaciones encontradas: " + reservaciones.size());
             return ReservacionPersistenciaAdapter.convertirListaADominio(reservaciones);
-            //return convertirDocumentosAReservaciones(reservaciones);
         } catch (Exception e) {
             LOG.log(Level.SEVERE, "Error durante la agregación de reservaciones para el usuario {0}: {1}", new Object[]{idUsuario, e.getMessage()});
             throw new PersistenciaException("No fue posible obtener las reservaciones");
@@ -228,7 +227,7 @@ public class ReservacionDAO implements IReservacionDAO {
             asistenciaMongo.setFechaHoraRegistro(LocalDateTime.now());
 
             Bson actualizacion = Updates.combine(
-                    Updates.set("boleto.estado", "USADO"),
+                    Updates.set("boleto.estado", EstadoBoleto.USADO.name()),
                     Updates.set("boleto.asistencia", asistenciaMongo)
             );
 
@@ -424,46 +423,4 @@ public class ReservacionDAO implements IReservacionDAO {
             throw new PersistenciaException("Error al asociar factura a reservación: " + e.getMessage());
         }
     }
-//    
-//    private List<Reservacion> convertirDocumentosAReservaciones(List<Document> documentos) {
-//    List<Reservacion> reservaciones = new ArrayList<>();
-//    
-//    for (Document doc : documentos) {
-//        try {
-//            // Convertir números a Double donde sea necesario
-//            Document boletoDoc = doc.get("boleto", Document.class);
-//            if (boletoDoc != null) {
-//                // Convertir total de Double a Integer si es necesario
-//                Object totalObj = boletoDoc.get("total");
-//                if (totalObj instanceof Integer) {
-//                    boletoDoc.put("total", ((Integer) totalObj).doubleValue());
-//                }
-//                
-//                // Convertir precios en el evento
-//                Document eventoDoc = boletoDoc.get("evento", Document.class);
-//                if (eventoDoc != null) {
-//                    Document ubicacionDoc = eventoDoc.get("ubicacion", Document.class);
-//                    if (ubicacionDoc != null) {
-//                        List<Document> secciones = ubicacionDoc.getList("secciones", Document.class);
-//                        if (secciones != null) {
-//                            for (Document seccion : secciones) {
-//                                Object precioBase = seccion.get("precioBase");
-//                                if (precioBase instanceof Integer) {
-//                                    seccion.put("precioBase", ((Integer) precioBase).doubleValue());
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//            
-//            reservaciones.add(ReservacionPersistenciaAdapter.convertirADominio(doc));
-//        } catch (Exception e) {
-//            LOG.log(Level.WARNING, "Error al convertir documento: {0}", e.getMessage());
-//            // Continuar con el siguiente documento
-//        }
-//    }
-//    
-//    return reservaciones;
-//}
 }

@@ -8,7 +8,6 @@
     </parent>
     <artifactId>SubsistemaSAT</artifactId>
     <packaging>jar</packaging>
-    
     <dependencies>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -20,20 +19,8 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>FacturacionSAT</artifactId>
             <version>${project.version}</version>
-            <!-- ✅ AGREGAR ESTO -->
-            <exclusions>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-core</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
-    
     <properties>
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>com.mycompany.subsistemasat.SubsistemaSAT</exec.mainClass>

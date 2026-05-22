@@ -18,7 +18,7 @@ import java.time.Duration;
 public class Conexion {
     // protocolo por el que viajan los datos
     private final HttpClient httpClient;
-    private static final String API_KEY = "e7f804ddd879466185296a45eee04211"; // mi clave ultra secreta
+    private static final String API_KEY = "llave"; // mi clave ultra secreta
     private static final String BASE_URL = "https://api.zerobounce.net/v2/validate"; // la url de la api
 
     public Conexion() {

@@ -45,7 +45,7 @@ public class ControlPago {
      */
     private static ControlPago instancia;
 
-    private static final String STRIPE_SECRET_KEY = "sk_test_51TUUVCRWoRbqfv0v6w23fYl4PVjgbzTpV92sbzivq15qWNi2eggH2lQJnedAWi19XamR6B1rArTtvTunexYdveIm00XmPbModH";
+    private static final String STRIPE_SECRET_KEY = "clave_privada";
 
     /**
      * Constructor privado.
